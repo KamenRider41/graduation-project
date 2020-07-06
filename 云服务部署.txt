@@ -1,0 +1,20 @@
+环境：  Ubuntu16.04 64位 非图形界面  地址119.96.103.27 天翼云
+1、 docker 方式安装mysql
+       执行以下命令 1）docker search mysql
+                          2）docker pull mysql:5.7 
+                 3）sudo docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=yysy0324 -d mysql:5.7
+       观察mysql是否正确启动：netstat -an|grep 3306
+       采用MySQL-Front工具连接数据库， 执行建库及建表SQL命令
+
+(https://jingyan.baidu.com/article/bea41d43d48e00b4c51be6b1.html  参考资料)
+2、安装 flask
+          1） 安装pip3   ：sudo apt-get install python3-pip
+            2）pip3 install pymysql
+            3）pip3 install jieba -i https://pypi.tuna.tsinghua.edu.cn/simple
+          4） pip3 install flask
+3、启动flask应用
+     1） 通过 winscp工具将 工程文件（201621112031_yysy_cov）拷贝到 /usr/local/mypython 目录
+      2） 运行：python3 -m flask run --host 0.0.0.0   （注意 不建议自定义配置port，就用默认的5000端口）
+
+坑： 采用docker anaconda 安装jupyter花了很多精力， 走了弯路。  另外，ubuntu提供 了两个版本的python 2.7和3.5 的。
+       本安装要用3.5 版本。
